@@ -1,0 +1,13 @@
+.addItemInput {
+  background-color: cornflowerblue;
+  height: 50px;
+}
+
+.addItemInput > input {
+  background-color: green;
+}
+
+.addItemInput > button {
+  background-color: aqua;
+  color: red;
+}
