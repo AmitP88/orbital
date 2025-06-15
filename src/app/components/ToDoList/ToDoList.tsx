@@ -5,6 +5,11 @@ export default function ToDoList() {
     console.log("Input Value: ", event.target.value);
   }
 
+  const handleSubmit = (event: React.ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault(); // prevents page reload when clicking submit button
+    
+  }
+
   return (
     <div className="to-do-list">
       <h1 className="text-center">ToDoList</h1>
