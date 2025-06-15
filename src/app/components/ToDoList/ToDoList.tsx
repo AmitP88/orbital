@@ -1,6 +1,8 @@
+'use client';
+
 export default function ToDoList() {
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e);
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    console.log("Input Value: ", event.target.value);
   }
 
   return (
