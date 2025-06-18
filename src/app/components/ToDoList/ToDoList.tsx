@@ -3,18 +3,18 @@
 import { useState } from "react";
 
 export default function ToDoList() {
-  const [Item, setItem] = useState('');
+  const [Input, setInput] = useState('');
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setItem(event.target.value);
+    setInput(event.target.value);
     // console.log("Input Value: ", event.target.value);
   }
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault(); // prevents page reload when clicking submit button
-    console.log("Item: ", Item);
+    console.log("Input: ", Input);
     // Optionally, clear the input after submit
-    setItem('');
+    setInput('');
   }
 
   return (
@@ -23,9 +23,9 @@ export default function ToDoList() {
       <div className="add-item-input bg-cornflower-blue h-min">
       <form className="add-item-input bg-cornflower-blue h-min" onSubmit={handleSubmit}>
         <input
-          name="input-item"
+          name="input"
           type="text"
-          value={Item}
+          value={Input}
           onChange={handleInputChange}
           placeholder="Type item here"
           className="mt-3 p-1 border border-gray-300 align-middle bg-gray-200" />
