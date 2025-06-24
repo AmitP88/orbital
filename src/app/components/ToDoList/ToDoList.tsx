@@ -31,7 +31,7 @@ export default function ToDoList() {
             value={Input}
             onChange={handleInputChange}
             placeholder="Type item here"
-            className="mt-3 p-1 border border-gray-300 align-middle bg-gray-200" />
+            className="w-full mt-3 p-1 border border-gray-300 align-middle bg-gray-200" />
           <button type="submit" className="mt-3 p-2 rounded-full w-full bg-teal-300 text-white">Add Item</button>
         </form>      
 
