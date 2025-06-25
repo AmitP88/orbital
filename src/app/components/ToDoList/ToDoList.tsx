@@ -1,4 +1,4 @@
-'use client';
+'use client'; // marks the component as a Client Component (front end). NextJS components are server components (backend) by default.
 
 import { useState } from "react";
 
@@ -37,7 +37,7 @@ export default function ToDoList() {
 
         <div>
           {divs.map((content, index) => (
-            <div key={index}>{content}</div>
+            <div key={index} className="border-2 border-gray-400 mt-6 pl-3">{content}</div>
           ))}
         </div>
       </div>
