@@ -3,21 +3,20 @@
 import { useState } from "react";
 
 export default function ToDoList() {
-  const [Input, setInput] = useState('');
-  const [divs, setDivs] = useState<string[]>([]);
+  const [Input, setInput] = useState(''); // state of the user's input data from the input element
+  const [List, setList] = useState<string[]>([]); // state of the list that is created on submission of user's input data
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInput(event.target.value);
+    setInput(event.target.value); // creates a new Input state that contains the user's input data (event.target.value)
   }
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault(); // prevents page reload when clicking submit button
 
-    const newDivContent = Input;
-    setDivs((prevDivs) => [...prevDivs, newDivContent]);
+    const newListContent = Input; // created new variable containing the new Input state
+    setList((prevList) => [...prevList, newListContent]); // creates a new List state containing both the new Input state (added as a new list item) and the previous List state
     
-    // Optionally, clear the input after submit
-    setInput('');
+    setInput(''); // Clears the input after submission
   }
 
   return (
@@ -35,9 +34,9 @@ export default function ToDoList() {
           <button type="submit" className="mt-3 p-2 rounded-full w-full bg-teal-300 text-white">Add Item</button>
         </form>      
 
-        <div>
-          {divs.map((content, index) => (
-            <div key={index} className="border-2 border-gray-400 mt-6 pl-3">{content}</div>
+        <div className="list-none mt-12">
+          {List.map((content, index) => (
+            <div key={index} className="list-item border-2 border-gray-400 mt-3 pl-3">{content}</div>
           ))}
         </div>
       </div>
