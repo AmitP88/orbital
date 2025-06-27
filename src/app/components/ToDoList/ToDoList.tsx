@@ -48,7 +48,7 @@ export default function ToDoList() {
         </form>      
 
         <div className="list-none mt-12">
-          {List.map((content, index) => ( // "content" is the array, "index" is the key for each item in the array
+          {List.map((content, index) => ( // "content" is the new array, "index" is the key for each item in the new array
             <div key={index} className="list-item border-2 border-gray-400 mt-3 pl-3">{content}</div>
           ))}
         </div>
